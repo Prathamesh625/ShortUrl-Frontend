@@ -59,7 +59,7 @@ function App() {
               <input
                 class="form-control form-control-lg  m-2"
                 type="text"
-                value={name}
+                value={longUrl}
                 onChange={(e) => {
                   setLongUrl(e.target.value);
                 }}
