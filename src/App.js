@@ -6,11 +6,11 @@ import Popup from "./components/Popup";
 import Header from "./components/Header";
 
 function App() {
-  const [name, setName] = useState("");
+  const [longUrl, setLongUrl] = useState("");
   const [shorturl, setShortUrl] = useState();
 
   const fun = async () => {
-    if (name === "") {
+    if (longUrl === "") {
       alert("do something");
     } else {
       const data = await fetch("https://shorturl-pxri.onrender.com/api/post", {
@@ -21,7 +21,7 @@ function App() {
         },
 
         body: JSON.stringify({
-          longUrl: name,
+          longUrl: longUrl,
         }),
       });
       const get = await data.json();
@@ -32,7 +32,7 @@ function App() {
 
   const refresh = (e) => {
     e.preventDefault();
-    setName("");
+    setLongUrl("");
     setShortUrl("");
   };
 
@@ -61,7 +61,7 @@ function App() {
                 type="text"
                 value={name}
                 onChange={(e) => {
-                  setName(e.target.value);
+                  setLongUrl(e.target.value);
                 }}
                 placeholder="Place Your Url Here"
                 aria-label=".form-control-lg example"
