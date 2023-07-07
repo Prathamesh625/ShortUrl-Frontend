@@ -13,7 +13,7 @@ function App() {
     if (name === "") {
       alert("do something");
     } else {
-      const data = await fetch("https://link-gen-app.herokuapp.com/api/post", {
+      const data = await fetch("https://shorturl-pxri.onrender.com/api/post", {
         method: "post",
         headers: {
           Accept: "application/json",
